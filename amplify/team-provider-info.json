@@ -12,22 +12,22 @@
       "AmplifyAppId": "dsva43237f1bk"
     },
     "categories": {
+      "function": {
+        "convertDiaryToImage": {
+          "secretsPathAmplifyAppId": "dsva43237f1bk",
+          "deploymentBucketName": "amplify-dpp-staging-43215-deployment",
+          "s3Key": "amplify-builds/convertDiaryToImage-455457354b4145644156-build.zip"
+        }
+      },
       "auth": {
         "dpp069ecbae": {},
         "userPoolGroups": {}
       },
-      "api": {
-        "dpp": {}
-      },
-      "function": {
-        "convertDiaryToImage": {
-          "deploymentBucketName": "amplify-dpp-staging-43215-deployment",
-          "s3Key": "amplify-builds/convertDiaryToImage-455457354b4145644156-build.zip",
-          "secretsPathAmplifyAppId": "dsva43237f1bk"
-        }
-      },
       "storage": {
         "dppimgs": {}
+      },
+      "api": {
+        "dpp": {}
       }
     }
   }

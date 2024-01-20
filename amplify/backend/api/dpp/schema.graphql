@@ -3,9 +3,9 @@
 
 type Diary @model @auth(rules: [{ allow: owner, ownerField: "owner", operations: [create, update, delete] }]) {
   id: ID!
-  owner: String!
-  title: String!
-  content: String!
+  owner: String
+  title: String
+  content: String
   imageUrl: String
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!

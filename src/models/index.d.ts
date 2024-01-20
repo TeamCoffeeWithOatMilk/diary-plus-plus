@@ -11,9 +11,9 @@ type EagerDiary = {
     identifier: ManagedIdentifier<Diary, 'id'>;
   };
   readonly id: string;
-  readonly owner: string;
-  readonly title: string;
-  readonly content: string;
+  readonly owner?: string | null;
+  readonly title?: string | null;
+  readonly content?: string | null;
   readonly imageUrl?: string | null;
   readonly createdAt: string;
   readonly updatedAt: string;
@@ -24,9 +24,9 @@ type LazyDiary = {
     identifier: ManagedIdentifier<Diary, 'id'>;
   };
   readonly id: string;
-  readonly owner: string;
-  readonly title: string;
-  readonly content: string;
+  readonly owner?: string | null;
+  readonly title?: string | null;
+  readonly content?: string | null;
   readonly imageUrl?: string | null;
   readonly createdAt: string;
   readonly updatedAt: string;

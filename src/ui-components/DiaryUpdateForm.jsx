@@ -61,9 +61,9 @@ export default function DiaryUpdateForm(props) {
   }, [idProp, diaryModelProp]);
   React.useEffect(resetStateValues, [diaryRecord]);
   const validations = {
-    owner: [{ type: "Required" }],
-    title: [{ type: "Required" }],
-    content: [{ type: "Required" }],
+    owner: [],
+    title: [],
+    content: [],
     imageUrl: [],
     createdAt: [{ type: "Required" }],
     updatedAt: [{ type: "Required" }],
@@ -165,7 +165,7 @@ export default function DiaryUpdateForm(props) {
     >
       <TextField
         label="Owner"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={owner}
         onChange={(e) => {
@@ -194,7 +194,7 @@ export default function DiaryUpdateForm(props) {
       ></TextField>
       <TextField
         label="Title"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={title}
         onChange={(e) => {
@@ -223,7 +223,7 @@ export default function DiaryUpdateForm(props) {
       ></TextField>
       <TextField
         label="Content"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={content}
         onChange={(e) => {

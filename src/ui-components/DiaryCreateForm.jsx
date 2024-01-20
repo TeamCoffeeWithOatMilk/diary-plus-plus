@@ -46,9 +46,9 @@ export default function DiaryCreateForm(props) {
     setErrors({});
   };
   const validations = {
-    owner: [{ type: "Required" }],
-    title: [{ type: "Required" }],
-    content: [{ type: "Required" }],
+    owner: [],
+    title: [],
+    content: [],
     imageUrl: [],
     createdAt: [{ type: "Required" }],
     updatedAt: [{ type: "Required" }],
@@ -149,7 +149,7 @@ export default function DiaryCreateForm(props) {
     >
       <TextField
         label="Owner"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={owner}
         onChange={(e) => {
@@ -178,7 +178,7 @@ export default function DiaryCreateForm(props) {
       ></TextField>
       <TextField
         label="Title"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={title}
         onChange={(e) => {
@@ -207,7 +207,7 @@ export default function DiaryCreateForm(props) {
       ></TextField>
       <TextField
         label="Content"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={content}
         onChange={(e) => {
