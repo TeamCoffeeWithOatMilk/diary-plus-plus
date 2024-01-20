@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "dpp069ecbae": {}
+        "dpp069ecbae": {},
+        "userPoolGroups": {}
       },
       "api": {
         "dpp": {}
@@ -21,9 +22,12 @@
       "function": {
         "convertDiaryToImage": {
           "deploymentBucketName": "amplify-dpp-staging-43215-deployment",
-          "s3Key": "amplify-builds/convertDiaryToImage-766c4e515446497a5266-build.zip",
+          "s3Key": "amplify-builds/convertDiaryToImage-455457354b4145644156-build.zip",
           "secretsPathAmplifyAppId": "dsva43237f1bk"
         }
+      },
+      "storage": {
+        "dppimgs": {}
       }
     }
   }
