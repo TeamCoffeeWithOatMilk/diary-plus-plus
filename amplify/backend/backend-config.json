@@ -57,5 +57,38 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "function": {
+    "convertDiaryToImage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_convertDiaryToImage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "convertDiaryToImage"
+        }
+      ]
+    },
+    "AMPLIFY_function_convertDiaryToImage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "convertDiaryToImage"
+        }
+      ]
+    },
+    "AMPLIFY_function_convertDiaryToImage_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "convertDiaryToImage"
+        }
+      ]
+    }
   }
 }

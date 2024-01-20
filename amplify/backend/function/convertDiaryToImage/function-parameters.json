@@ -1,0 +1,7 @@
+{
+  "lambdaLayers": [],
+  "secretNames": [
+    "DPP_ACCESS_KEY",
+    "DPP_SECRET_ACCESS_KEY"
+  ]
+}
