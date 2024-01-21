@@ -71,3 +71,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+input {
+  outline: none;
+}
+
+.editorCore {
+  outline: none;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: justify;
+}

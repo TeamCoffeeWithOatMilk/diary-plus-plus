@@ -14,7 +14,7 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
+    "emailVerificationSubject": "Meow, here is your diary notebook",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
@@ -37,7 +37,7 @@
     "sharedId": "069ecbae",
     "resourceName": "dpp069ecbae",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "useDefault": "manual",
     "usernameAttributes": [
       "email"
     ],
@@ -65,6 +65,11 @@
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "hostedUI": false,
+    "authProviders": []
   }
 }

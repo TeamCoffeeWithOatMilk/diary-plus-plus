@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Amplify } from "aws-amplify";
 import { DataStore } from "@aws-amplify/datastore";
 import { getCurrentUser } from "@aws-amplify/auth";
+import { useNavigate } from "react-router-dom";
 
 const styles = {
     container: {
@@ -21,7 +22,6 @@ const styles = {
 
 interface DiaryCardListProps {
     getDiaries: () => Promise<Diary[]>;
-    onSelectDiary: (diary: Diary) => void;
     onCreateDiary: () => Promise<Diary>;
 }
 
@@ -34,16 +34,11 @@ export const defaultDiaryProps = {
         );
         return diaries;
     },
-    onSelectDiary: () => {
-        // TODO: implement
-    },
     onCreateDiary: async () => {
         // get the current user
         const user = await getCurrentUser();
         const diary = await DataStore.save(
             new Diary({
-                title: 'My First Diary',
-                content: 'Hello world!',
                 owner: user.userId,
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString(),
@@ -53,8 +48,9 @@ export const defaultDiaryProps = {
     },
 };
 
-export default function DiaryCardList({ getDiaries, onSelectDiary, onCreateDiary }: DiaryCardListProps) {
+export default function DiaryCardList({ getDiaries, onCreateDiary }: DiaryCardListProps) {
     const [diaries, setDiaries] = useState<Diary[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchDiaries = async () => {
@@ -70,15 +66,17 @@ export default function DiaryCardList({ getDiaries, onSelectDiary, onCreateDiary
         <div style={styles.container}>
             <Button style={styles.button} onClick={async () => {
                 const diary = await onCreateDiary();
-                onSelectDiary(diary);
                 setDiaries([diary, ...diaries]);
+                navigate(`/diary/${diary.id}`);
             }}>Create Diary</Button>
             <div style={styles.list}>
                 {diaries.map((diary, index) => (
                     <DiaryCard
                         key={index}
                         diary={diary}
-                        onClick={() => onSelectDiary(diary)}
+                        onClick={() => {
+                            navigate(`/diary/${diary.id}`);
+                        }}
                     />
                 ))}
             </div>

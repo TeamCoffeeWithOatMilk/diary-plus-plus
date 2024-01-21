@@ -5,6 +5,9 @@ import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import DiaryCardList, { defaultDiaryProps } from './components/DiaryCardList';
 import { Diary, LazyDiary } from './models';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { DiaryEditor } from './components/DiaryEditor';
+
 Amplify.configure(awsExports);
 
 export default function App() {
@@ -12,9 +15,12 @@ export default function App() {
   return (
     <Authenticator variation='default' >
       {({ signOut, user }) => (
-        <main>
-          <DiaryCardList getDiaries={defaultDiaryProps.getDiaries} onSelectDiary={defaultDiaryProps.onSelectDiary} onCreateDiary={defaultDiaryProps.onCreateDiary} />
-        </main>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<DiaryCardList {...defaultDiaryProps} />} />
+            <Route path="/diary/:id" element={<DiaryEditor />} />
+          </Routes>
+        </BrowserRouter>
       )}
     </Authenticator>
   );

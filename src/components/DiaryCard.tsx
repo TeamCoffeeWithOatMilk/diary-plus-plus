@@ -34,6 +34,7 @@ const styles = {
         paddingTop: 0,
         paddingBottom: 0,
 
+
     },
     metaText: {
         fontSize: 12,
@@ -41,7 +42,7 @@ const styles = {
         marginBottom: 0,
         paddingTop: 0,
         paddingBottom: 0,
-        color: '#666666',
+        color: '#222222',
     },
     captionText: {
         fontSize: 12,
@@ -51,7 +52,10 @@ const styles = {
         marginBottom: 0,
         paddingTop: 0,
         paddingBottom: 0,
-
+        display: '-webkit-box',
+        lineHeight: 1.5,
+        maxHeight: 36,
+        color: '#666666',
     }
 }
 
@@ -76,9 +80,9 @@ export default function DiaryCard({ diary, onClick }: DiaryCardProps) {
             <div style={styles.innerCard}>
                 {!!diary?.imageUrl ? <img src={diary.imageUrl} style={styles.image} /> : <img src={defaultImage} style={styles.image} />}
                 <div style={styles.textContent}>
-                    <h3 style={styles.heading}>{diary.title}</h3>
-                    <p style={styles.metaText}>Created At {formatDate(diary.createdAt)}, Updated At {formatDate(diary.updatedAt)}</p>
-                    <p style={styles.captionText}>{diary.content}</p>
+                    <h3 style={styles.heading}>{diary.title ?? 'Untitled Diary'}</h3>
+                    <p style={styles.metaText}>{formatDate(diary.createdAt)}</p>
+                    <p style={styles.captionText} >{diary.content}</p>
                 </div>
             </div>
         </Card>

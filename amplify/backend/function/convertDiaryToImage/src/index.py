@@ -10,6 +10,7 @@ def handler(event, context):
     'bedrock-runtime',
     region_name='us-east-1',
   )
+  print(event)
   body = json.dumps({
     "prompt": f"You will be given a diary. Analyze the emotions of the author and what happened to him. Create a prompt to generate an image of cat resembling his feelings and experiences. Do include a description of all the objects in the image, including in the foreground & background. Here is the diary: {event['diary']}",
     "temperature": 0.7,

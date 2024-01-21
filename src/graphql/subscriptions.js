@@ -2,8 +2,11 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateDiary = /* GraphQL */ `
-  subscription OnCreateDiary($filter: ModelSubscriptionDiaryFilterInput) {
-    onCreateDiary(filter: $filter) {
+  subscription OnCreateDiary(
+    $filter: ModelSubscriptionDiaryFilterInput
+    $owner: String
+  ) {
+    onCreateDiary(filter: $filter, owner: $owner) {
       id
       owner
       title
@@ -19,8 +22,11 @@ export const onCreateDiary = /* GraphQL */ `
   }
 `;
 export const onUpdateDiary = /* GraphQL */ `
-  subscription OnUpdateDiary($filter: ModelSubscriptionDiaryFilterInput) {
-    onUpdateDiary(filter: $filter) {
+  subscription OnUpdateDiary(
+    $filter: ModelSubscriptionDiaryFilterInput
+    $owner: String
+  ) {
+    onUpdateDiary(filter: $filter, owner: $owner) {
       id
       owner
       title
@@ -36,8 +42,11 @@ export const onUpdateDiary = /* GraphQL */ `
   }
 `;
 export const onDeleteDiary = /* GraphQL */ `
-  subscription OnDeleteDiary($filter: ModelSubscriptionDiaryFilterInput) {
-    onDeleteDiary(filter: $filter) {
+  subscription OnDeleteDiary(
+    $filter: ModelSubscriptionDiaryFilterInput
+    $owner: String
+  ) {
+    onDeleteDiary(filter: $filter, owner: $owner) {
       id
       owner
       title
