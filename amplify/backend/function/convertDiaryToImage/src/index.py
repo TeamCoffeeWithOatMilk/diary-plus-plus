@@ -28,6 +28,8 @@ def handler(event, context):
 
   # Generate image from prompt
   img_prompt = json.loads(response)['generation']
+  if '\\nPrompt: ' in img_prompt:
+    img_prompt = img_prompt.split('\\nPrompt: ')[1]
   style = event['style'] if 'style' in event else 'digital-art'
   seed = event['seed'] if 'seed' in event else 918008277
   steps = event['steps'] if 'steps' in event else 50

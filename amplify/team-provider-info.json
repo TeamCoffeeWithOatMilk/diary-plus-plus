@@ -16,7 +16,7 @@
         "convertDiaryToImage": {
           "secretsPathAmplifyAppId": "dsva43237f1bk",
           "deploymentBucketName": "amplify-dpp-staging-43215-deployment",
-          "s3Key": "amplify-builds/convertDiaryToImage-356c31736a702f503967-build.zip"
+          "s3Key": "amplify-builds/convertDiaryToImage-6262334861672f475671-build.zip"
         }
       },
       "auth": {
